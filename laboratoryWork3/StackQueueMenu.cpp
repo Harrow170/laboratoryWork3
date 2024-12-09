@@ -39,7 +39,8 @@ void StackQueueMenu(StackQueue* queue)
 		cout << "Current queue: ";
 		DisplayStackQueue(queue);
 		cout << endl;
-		int choice = GetInput("Queue menu: \n 1. Add element\n 2. Remove element\n 0. Exit\n Your input: ");
+		int choice = GetInput("Queue menu: \n 1. Add element\n 2. Remove element\n \
+0. Exit\n Your input: ");
 		switch (choice)
 		{
 		case 1:

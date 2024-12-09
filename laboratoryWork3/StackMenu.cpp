@@ -25,7 +25,8 @@ void StackMenu(Stack* stack)
 		cout << "Current stack: " << endl;
 		DisplayStack(stack);
 		cout << endl;
-		int choice = GetInput("Stack menu: \n 1. Add element\n 2. Delete element\n 3. Is empty\n 4. Resize\n 0. exit\n Your input:\n");
+		int choice = GetInput("Stack menu: \n 1. Add element\n 2. Delete element\n \
+3. Is empty\n 4. Resize\n 0. exit\n Your input:\n");
 		switch (choice)
 		{
 		case 1:

@@ -18,7 +18,8 @@ void Menu()
 	StackQueue* sque = CreateStackQueue();
 	while (true)
 	{
-		int choice = GetInput("Menu: \n 1. Stack\n 2. Buffer\n 3. Queue\n 4. Stack queue\n 0. End\n Your input: ");
+		int choice = GetInput("Menu: \n 1. Stack\n 2. Buffer\n 3. Queue\n \
+4. Stack queue\n 0. End\n Your input: ");
 		switch (choice)
 		{
 		case 1:
@@ -38,10 +39,10 @@ void Menu()
 			break;
 
 		case 0:
-			Delete(stack);
-			FreeBuffer(cb);
-			FreeQueue(queue);
-			FreeStackQueue(sque);
+			//Delete(stack);
+			//FreeBuffer(cb);
+			//FreeQueue(queue);
+			//FreeStackQueue(sque);
 			return; 
 
 		default:

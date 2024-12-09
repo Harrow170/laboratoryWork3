@@ -29,7 +29,8 @@ void BufferMenu(CircleBuffer* cb)
 		cout << "Current buffer: " << endl;
 		DisplayBuffer(cb);
 		cout << endl;
-		int choice = GetInput("Buffer menu: \n 1. Add element\n 2. Remove element\n 3. Get free space\n 4. Get space\n 0. Exit\n Your input: ");
+		int choice = GetInput("Buffer menu: \n 1. Add element\n 2. Remove element\n \
+3. Get free space\n 4. Get space\n 0. Exit\n Your input: ");
 		switch (choice)
 		{
 		case 1:
