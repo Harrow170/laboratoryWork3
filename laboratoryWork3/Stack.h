@@ -2,12 +2,18 @@
 //! \brief Structure for a stack.
 struct Stack
 {
+	//! \brief pointer
 	int* Data;
 
+	//! \brief stack capacity
 	int Capacity;
 
+	//! \brief top index
 	int Top;
 };
+
+//! \brief growth factor for resize
+const int GROWTH_FACTOR = 2;
 
 //! \brief Creates and initializes a stack.
 //! \return Pointer to the created stack.

@@ -2,29 +2,36 @@
 #include "StackQueue.h"
 #include "Stack.h"
 #include "StackQueueMenu.h"
+#include <iostream>
 
 using namespace std;
 
-void StackForQueue(Stack* stack)
-{
-	if (stack == nullptr)
+void PrintStackForQueue(Stack* stack) {
+	if (stack == nullptr) 
 	{
-		cout << "Null" << endl;
+		cout << "Stack is null." << endl;
 		return;
 	}
 
-	if (IsEmpty(stack))
+	if (IsEmpty(stack)) 
 	{
-		cout << "Empty" << endl;
+		cout << "Stack is empty." << endl;
 		return;
 	}
 
 	Stack* temp = CreateStack();
-	cout << "Stack contents: " << endl;
-	while (!IsEmpty(stack))
-	{
+
+
+	cout << "Stack contents: ";
+	while (!IsEmpty(stack)) {
 		int value = Pop(stack);
-		cout << "[ " << value << "] " << endl;
+		std::cout << value << " ";
+		Push(temp, value);
+	}
+	cout << endl;
+
+	while (!IsEmpty(temp))
+	{
 		Push(stack, Pop(temp));
 	}
 
@@ -40,17 +47,19 @@ void DisplayStackQueue(StackQueue* queue)
 	}
 
 	cout << "InStack: ";
-	StackForQueue(queue->Stack1);
+	PrintStackForQueue(queue->Stack1);
+
 	cout << "OutStack: ";
-	StackForQueue(queue->Stack2);
+	PrintStackForQueue(queue->Stack2);
 }
+
 
 void StackQueueMenu(StackQueue* queue)
 {
 	//StackQueue* queue = CreateStackQueue();
 	while (true)
 	{
-		cout << "Current queue: ";
+		cout << "Current queue: " << endl;
 		DisplayStackQueue(queue);
 		cout << endl;
 		int choice = GetInput("Queue menu: \n 1. Add element\n 2. Remove element\n \

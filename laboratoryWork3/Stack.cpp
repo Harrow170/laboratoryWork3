@@ -16,7 +16,7 @@ void Push(Stack* stack, int data)
 {
     if (IsFull(stack))
     {
-        Resize(stack, stack->Capacity * 2);
+        Resize(stack, stack->Capacity * GROWTH_FACTOR);
     }
 
     stack->Data[++stack->Top] = data;

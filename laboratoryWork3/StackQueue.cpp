@@ -1,5 +1,4 @@
 #include "Stack.h"
-//#include "Stack2.h"
 #include "StackQueue.h"
 #include <stdexcept>
 

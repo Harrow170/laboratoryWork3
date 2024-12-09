@@ -4,6 +4,7 @@
 //! \brief Структура очереди на основе кольцевого буфера.
 struct Queue
 {
+	//! \brief pointer
 	CircleBuffer* Cb;
 };
 

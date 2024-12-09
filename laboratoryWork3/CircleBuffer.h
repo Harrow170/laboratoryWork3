@@ -2,10 +2,19 @@
 //! \brief Circle buffer structure.
 struct CircleBuffer
 {
+	//! \brief pointer
 	int* Buffer;
+
+	//! \brief laast element
 	int Tail;
+
+	//! \brief first element
 	int Head;
+
+	//! \brief capacity
 	int BufferSize;
+
+	//! \brief number of elements
 	int Count;
 };
 

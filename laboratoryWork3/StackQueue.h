@@ -4,7 +4,10 @@
 //! \brief Structure representing a queue implemented using two stacks
 struct StackQueue 
 {
-    Stack* Stack1; 
+    //! \brief 1 stack
+    Stack* Stack1;
+
+    //! \brief 2 stack
     Stack* Stack2; 
 };
 
