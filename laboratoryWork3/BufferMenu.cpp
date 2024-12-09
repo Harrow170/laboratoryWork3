@@ -33,48 +33,48 @@ void BufferMenu(CircleBuffer* cb)
 3. Get free space\n 4. Get space\n 0. Exit\n Your input: ");
 		switch (choice)
 		{
-		case 1:
-		{
-			int value = GetInput("Enter element to add: ");
-			try
+			case 1:
 			{
-				AddElement(cb, value);
+				int value = GetInput("Enter element to add: ");
+				try
+				{
+					AddElement(cb, value);
+				}
+
+				catch (const overflow_error& e)
+				{
+					cout << e.what() << endl;
+				}
+				break;
+			}
+			case 2:
+			{
+				if (Remove(cb))
+				{
+					cout << "Element removed.\n";
+				}
+				else
+				{
+					cout << "Buffer is empty.\n";
+				}
+				break;
+			}
+			case 3:
+			{
+				cout << "Free space: " << FreeSpace(cb) << endl;
+				break;
+			}
+			case 4:
+			{
+				cout << "Occupied space: " << OccupiedSpace(cb) << endl;
+				break;
 			}
 
-			catch (const overflow_error& e)
-			{
-				cout << e.what() << endl;
-			}
-			break;
-		}
-		case 2:
-		{
-			if (Remove(cb))
-			{
-				cout << "Element removed.\n";
-			}
-			else
-			{
-				cout << "Buffer is empty.\n";
-			}
-			break;
-		}
-		case 3:
-		{
-			cout << "Free space: " << FreeSpace(cb) << endl;
-			break;
-		}
-		case 4:
-		{
-			cout << "Occupied space: " << OccupiedSpace(cb) << endl;
-			break;
-		}
-
-		case 0:
-			FreeBuffer(cb);
-			return;
-		default:
-			cout << "Error: Invalid choice.\n";
+			case 0:
+				FreeBuffer(cb);
+				return;
+			default:
+				cout << "Error: Invalid choice.\n";
 		}
 	}
 }

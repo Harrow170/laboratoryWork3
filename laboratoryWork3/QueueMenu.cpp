@@ -31,30 +31,30 @@ void QueueMenu(Queue* queue)
  0. Exit\n Your input: ");
 		switch (choice)
 		{
-		case 1:
-		{
-			int value = GetInput("Enter element to add: ");
-			Enqueue(queue, value);
-			break;
-		}
-		case 2:
-		{
-			if (Dequeue(queue))
+			case 1:
 			{
-				cout << "Element removed.\n";
+				int value = GetInput("Enter element to add: ");
+				Enqueue(queue, value);
+				break;
 			}
-			else
+			case 2:
 			{
-				cout << "Queue is empty.\n";
+				if (Dequeue(queue))
+				{
+					cout << "Element removed.\n";
+				}
+				else
+				{
+					cout << "Queue is empty.\n";
+				}
+				break;
 			}
-			break;
-		}
 
-		case 0:
-			FreeQueue(queue);
-			return;
-		default:
-			cout << "Error: Invalid choice.\n";
+			case 0:
+				FreeQueue(queue);
+				return;
+			default:
+				cout << "Error: Invalid choice.\n";
 		}
 	}
 }

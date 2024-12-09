@@ -29,48 +29,48 @@ void StackMenu(Stack* stack)
 3. Is empty\n 4. Resize\n 0. exit\n Your input:\n");
 		switch (choice)
 		{
-		case 1:
-		{
-			int value = GetInput("Enter element to add: ");
-			Push(stack, value);
-			break;
-		}
-		case 2:
-		{
-			if (!IsEmpty(stack))
+			case 1:
 			{
-				int value = Pop(stack);
-				cout << "Removed element: " << value << endl;
+				int value = GetInput("Enter element to add: ");
+				Push(stack, value);
+				break;
 			}
-			else
+			case 2:
 			{
-				cout << "Stack is empty, cannot pop.\n";
+				if (!IsEmpty(stack))
+				{
+					int value = Pop(stack);
+					cout << "Removed element: " << value << endl;
+				}
+				else
+				{
+					cout << "Stack is empty, cannot pop.\n";
+				}
+				break;
 			}
-			break;
-		}
-		case 3:
-		{
-			if (IsEmpty(stack))
+			case 3:
 			{
-				cout << "Stack is empty.\n";
+				if (IsEmpty(stack))
+				{
+					cout << "Stack is empty.\n";
+				}
+				else
+				{
+					cout << "Stack is not empty.\n";
+				}
+				break;
 			}
-			else
+			case 4:
 			{
-				cout << "Stack is not empty.\n";
+				int value = GetInput("Enter new size: ");
+				Resize(stack, value);
+				break;
 			}
-			break;
-		}
-		case 4:
-		{
-			int value = GetInput("Enter new size: ");
-			Resize(stack, value);
-			break;
-		}
-		case 0:
-			Delete(stack);
-			return;
-		default:
-			cout << "Error: Invalid choice.\n";
+			case 0:
+				Delete(stack);
+				return;
+			default:
+				cout << "Error: Invalid choice.\n";
 		}
 	}
 }
